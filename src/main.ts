@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { ApiModule } from './api/api.module';
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe, VersioningType } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as basicAuth from 'express-basic-auth';
 import { HttpExceptionFilter } from '@common/filters/http-exception.filter';
@@ -42,6 +42,9 @@ async function setupSwagger(app, port: number) {
 async function bootstrap() {
   const app = await NestFactory.create(ApiModule);
   let PORT = +process.env.PORT || 3000;
+  app.enableVersioning({
+    type: VersioningType.URI
+  });
   await setupSwagger(app, PORT);
   app.enableCors();
   app.useGlobalFilters(new HttpExceptionFilter());
