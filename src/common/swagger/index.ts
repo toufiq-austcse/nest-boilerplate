@@ -17,9 +17,6 @@ export async function setupSwagger(app: INestApplication, port: number) {
       { type: 'apiKey', name: 'Authorization', in: 'header', scheme: 'bearer', bearerFormat: 'Bearer' },
       'auth'
     )
-    .addApiKey({
-      type: 'apiKey', name: 'Authorization', in: 'header', scheme: 'bearer', bearerFormat: 'Bearer'
-    }, 'studio-server-auth')
     .addServer(AppConfigService.appConfig.SWAGGER_SERVER_BASE_URL, AppConfigService.appConfig.SWAGGER_SERVER_BASE_URL_DESCRIPTION)
     .build();
 
