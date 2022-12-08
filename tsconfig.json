@@ -11,12 +11,22 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "strict": true,
+    "moduleResolution": "Node",
     "skipLibCheck": true,
+    "esModuleInterop": true,
     "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
     "paths": {
       "@common/filters/*": [
         "./src/common/filters/*"
@@ -27,11 +37,35 @@
       "@common/http-clients/*": [
         "./src/common/http-clients/*"
       ],
+      "@common/app-config/*": [
+        "./src/common/app-config/*"
+      ],
       "@common/database/*": [
         "./src/common/database/*"
       ],
       "@common/dto/*": [
         "./src/common/dto/*"
+      ],
+      "@common/guards/*": [
+        "./src/common/guards/*"
+      ],
+      "@common/decorators/*": [
+        "./src/common/decorators/*"
+      ],
+      "@common/constants/*": [
+        "./src/common/constants/*"
+      ],
+      "@common/utils/*": [
+        "./src/common/utils/*"
+      ],
+      "@common/swagger/*": [
+        "./src/common/swagger/*"
+      ],
+      "@common/exceptions/*": [
+        "./src/common/exceptions/*"
+      ],
+      "@common/rabbit-mq/*": [
+        "./src/common/rabbit-mq/*"
       ]
     }
   }
