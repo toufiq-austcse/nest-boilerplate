@@ -14,6 +14,7 @@ RUN node-prune
 FROM base AS dev
 COPY nest-cli.json \
   tsconfig.* \
+   ormconfig.ts \
 #  .eslintrc.js \
 #  .prettierrc \
   ./
