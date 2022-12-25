@@ -33,6 +33,6 @@ COPY --from=dev /app/dist/ ./dist/
 # get the node_modules from the intial cache
 COPY --from=base /app/node_modules/ ./node_modules/
 # expose application port
-EXPOSE 3000
+EXPOSE 3005 3010
 # start
 CMD ["node", "dist/src/main.js"]
